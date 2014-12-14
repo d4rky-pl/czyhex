@@ -9,6 +9,7 @@ span { color: #eee }
 #footer { position: absolute; bottom: 0; left: 0; width: 100% }
 #footer a { color: #888; text-decoration: none; font-size: 10px; }
 </style>
+<title>Czy w Heksie są jeszcze wolne miejsca?</title>
 </head>
 <body>
 <%
@@ -29,10 +30,12 @@ span { color: #eee }
     13 => 'stolik po lewej w viproomie'
   }
 
-if random_table.nil? %>
-  <h1>Nie, wszystkie stoliki są zarezerwowane :(</h1>
-<% else %>
+if Time.now.hour > 3 && Time.now.hour < 12 %>
+  <h1>Hex jest prawdopodobnie zamknięty :(</h1>
+<% elsif random_table %>
   <h1>Tak, jest szansa, że <span><%= tables[random_table] %></span> jest wolny :)</h1>
+<% else %>
+  <h1>Nie, wszystkie stoliki są zarezerwowane :(</h1>
 <% end %>
 <div id="footer"><a href="http://nerdblog.pl">(lol I made this)</a></div>
 </body>
