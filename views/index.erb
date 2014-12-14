@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html, body { height: 100%; padding: 0; margin: 0; background: #333 }
+body { font: 18px normal "Helvetica Neue",Helvetica,Arial,sans-serif; text-align: center; display: table; width: 100%; }
+h1 { display: table-cell; vertical-align: middle; text-shadow: 0 2px 0 #000; color: #888 }
+span { color: #eee }
+#footer { position: absolute; bottom: 0; left: 0; width: 100% }
+#footer a { color: #888; text-decoration: none; font-size: 10px; }
+</style>
+</head>
+<body>
+<%
+  tables = {
+    0 => 'stolik przy półce z grami',
+    1 => 'drugi stolik od półki z grami',
+    2 => 'trzeci stolik od półki z grami',
+    3 => 'stolik zaraz przy barze',
+    4 => 'stolik w lewym rogu dużej sali',
+    5 => 'stolik przy kominku',
+    6 => 'stolik w samym prawym rogu dużej sali',
+    7 => 'stolik prawie w samym prawym rogu dużej sali',
+    8 => 'stolik w pokoju z konsolą',
+    9 => 'stolik zaraz przy wejściu',
+    10 => 'stolik po lewej w małej sali',
+    11 => 'stolik w prawym rogu małej sali',
+    12 => 'stolik po prawej w viproomie',
+    13 => 'stolik po lewej w viproomie'
+  }
+
+if random_table.nil? %>
+  <h1>Nie, wszystkie stoliki są zarezerwowane :(</h1>
+<% else %>
+  <h1>Tak, jest szansa, że <span><%= tables[random_table] %></span> jest wolny :)</h1>
+<% end %>
+<div id="footer"><a href="http://nerdblog.pl">(lol I made this)</a></div>
+</body>
+</html>
